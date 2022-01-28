@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:paddingEnd="20dp"
+    android:paddingStart="20dp"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_name"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edt_name"
+            android:inputType="textPersonName"
+            android:autofillHints="name"
+            android:hint="@string/name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+      android:layout_marginTop="10dp"
+        android:id="@+id/card_number"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/card_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edt_number"
+            android:inputType="phone"
+            android:autofillHints="phone"
+            android:hint="@string/number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:contentDescription="@string/save_contact"
+        android:text="@string/save"
+        android:backgroundTint="@color/yellow"
+        android:textColor="@color/black"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+   <LinearLayout
+       android:orientation="vertical"
+       app:layout_constraintTop_toBottomOf="@id/btn_save"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:layout_width="match_parent"
+       android:layout_height="0dp">
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/my_recycle"
+           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"/>
+
+
+   </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
